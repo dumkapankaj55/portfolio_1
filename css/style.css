@@ -270,31 +270,18 @@ button { color: inherit; }
 .contact-top h2 { margin: 0; font-family: var(--font-display); font-size: clamp(57px, 9.3vw, 119px); font-weight: 500; letter-spacing: -.085em; line-height: .91; }
 .contact-top h2 em { color: var(--accent); font-style: normal; }
 .contact-description { margin: 23px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
-.contact-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(45px, 11vw, 158px); margin-top: 72px; padding-top: 30px; border-top: 1px solid var(--line); }
-.social-list { margin-top: 20px; border-top: 1px solid var(--line); }
-.social-link { min-height: 53px; display: grid; grid-template-columns: 21px 1fr 20px; align-items: center; gap: 11px; border-bottom: 1px solid var(--line); color: #d5d6ce; font-size: 11px; transition: color .2s, padding .2s; }
-.social-link:hover { padding-inline: 4px; color: var(--accent); }
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 62px; padding-top: 27px; border-top: 1px solid var(--line); }
+.social-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 19px; }
+.social-link { min-height: 112px; position: relative; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 14px; padding: 20px; border: 1px solid var(--line); color: #d5d6ce; font-size: 14px; font-weight: 600; transition: color .2s, border-color .2s, background .2s, transform .2s; }
+.social-link:hover { transform: translateY(-3px); border-color: rgba(199, 243, 107, .55); background: rgba(199, 243, 107, .035); color: var(--accent); }
 .icon { width: 17px; height: 17px; fill: currentColor; }
-.social-arrow { justify-self: end; color: var(--muted-dark); font-size: 15px; transition: color .2s, transform .2s; }
+.social-link .icon { width: 22px; height: 22px; }
+.social-arrow { position: absolute; top: 17px; right: 17px; color: var(--muted-dark); font-size: 17px; transition: color .2s, transform .2s; }
 .social-link:hover .social-arrow { color: var(--accent); transform: translate(2px, -2px); }
 .contact-direct { display: grid; grid-template-columns: 90px 1fr; gap: 9px 15px; margin-top: 31px; }
 .contact-direct > span { color: var(--muted-dark); font-size: 7px; }
 .contact-direct p, .contact-direct a { margin: 0; color: #d7d9d1; font-size: 10px; }
 .contact-direct a:hover { color: var(--accent); }
-.contact-form { display: flex; flex-direction: column; gap: 20px; }
-.form-row { display: flex; flex-direction: column; gap: 9px; }
-.form-row label { color: #d6d8cf; font-size: 10px; }
-.form-row input, .form-row textarea { width: 100%; min-height: 44px; padding: 11px 0; resize: vertical; border: 0; border-bottom: 1px solid var(--line-strong); border-radius: 0; outline: 0; background: transparent; color: var(--text); font-size: 12px; transition: border-color .2s; }
-.form-row textarea { min-height: 100px; }
-.form-row input::placeholder, .form-row textarea::placeholder { color: #686d65; font-size: 11px; }
-.form-row input:focus, .form-row textarea:focus { border-color: var(--accent); }
-.form-row input[aria-invalid="true"], .form-row textarea[aria-invalid="true"] { border-color: #e28b78; }
-.form-submit { align-self: flex-start; min-width: 185px; margin-top: 2px; }
-.form-hint { margin: -8px 0 0; color: var(--muted-dark); font-size: 9px; line-height: 1.7; }
-.form-status { color: var(--muted); font-size: 10px; line-height: 1.8; }
-.form-status-error { color: #e8a091; }
-.form-status-success { color: #c7d2ba; }
-.email-draft-link { display: inline-block; margin-left: 5px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .site-footer { margin-top: clamp(95px, 12vw, 165px); border-top: 1px solid var(--line); }
 .footer-inner { min-height: 98px; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
 .footer-brand .brand-name { font-size: 10px; }
@@ -367,7 +354,7 @@ button { color: inherit; }
   .orbit-two { width: 130px; }
   .schedule-screen { padding-inline: 21px; }
   .journey-grid { gap: 44px; }
-  .contact-grid { gap: 54px; }
+  .contact-grid { gap: 0; }
 }
 @media (max-width: 620px) {
   :root { --gutter: 22px; }
@@ -447,8 +434,11 @@ button { color: inherit; }
   .timeline-entry h3 { font-size: 25px; }
   .contact-top h2 { font-size: clamp(54px, 13vw, 80px); }
   .contact-description { font-size: 12px; }
-  .contact-grid { grid-template-columns: 1fr; gap: 46px; margin-top: 49px; padding-top: 25px; }
-  .contact-form { gap: 17px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 0; margin-top: 45px; padding-top: 22px; }
+  .social-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .social-link { min-height: 100px; padding: 16px; font-size: 13px; }
+  .social-link .icon { width: 21px; height: 21px; }
+  .social-arrow { top: 13px; right: 13px; }
   .footer-inner { min-height: 120px; flex-wrap: wrap; justify-content: space-between; gap: 13px; padding-block: 23px; }
   .footer-inner > p { order: 3; width: 100%; }
   .footer-year { font-size: 6px; }

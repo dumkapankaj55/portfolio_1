@@ -101,11 +101,10 @@
   }
 
   function renderContact() {
-    const links = [external(data.social.github, "GitHub", "github"), external(data.social.linkedin, "LinkedIn", "linkedin"), external(data.social.leetcode, "LeetCode", "leetcode"), external(`mailto:${data.email}`, data.email, "mail")].join("");
+    const links = [external(data.social.github, "GitHub", "github"), external(data.social.linkedin, "LinkedIn", "linkedin"), external(data.social.leetcode, "LeetCode", "leetcode")].join("");
     const contactHeading = escapeHTML(data.contact.heading).replace("great.", "<em>great.</em>");
     return `<section class="contact section-wrap section-space" id="contact" aria-labelledby="contact-title"><div class="contact-top" data-reveal><p class="eyebrow"><span class="eyebrow-line"></span>06 — ${escapeHTML(data.contact.eyebrow)}</p><h2 id="contact-title">${contactHeading}</h2><p class="contact-description">${escapeHTML(data.contact.description)}</p></div>
-      <div class="contact-grid"><div class="connect-column" data-reveal><p class="mini-label">LET'S CONNECT</p><div class="social-list">${links}</div><div class="contact-direct"><span>BASED IN</span><p>${escapeHTML(data.location)}</p><span>EMAIL</span><a href="mailto:${escapeHTML(data.email)}">${escapeHTML(data.email)} ↗</a></div></div>
-      <form class="contact-form" id="contact-form" novalidate data-reveal data-reveal-delay="100"><div class="form-row"><label for="contact-name">Your name</label><input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required minlength="2" /></div><div class="form-row"><label for="contact-email">Email address</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required /></div><div class="form-row"><label for="contact-subject">Subject</label><input id="contact-subject" name="subject" type="text" placeholder="What would you like to discuss?" required minlength="3" /></div><div class="form-row"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="4" placeholder="A little about your idea, opportunity, or project..." required minlength="10"></textarea></div><button class="button button-primary form-submit" type="submit"><span>Prepare email</span><span class="arrow" aria-hidden="true">↗</span></button><p class="form-hint">This form prepares an email draft on your device; it doesn't send or store messages.</p><div class="form-status" id="form-status" role="status" aria-live="polite"></div></form></div>
+      <div class="contact-grid"><div class="connect-column" data-reveal><p class="mini-label">LET'S CONNECT</p><div class="social-list">${links}</div><div class="contact-direct"><span>BASED IN</span><p>${escapeHTML(data.location)}</p><span>EMAIL</span><a href="mailto:${escapeHTML(data.email)}">${escapeHTML(data.email)} ↗</a></div></div></div>
     </section>`;
   }
 
@@ -206,33 +205,4 @@
     updateParallax();
   }
 
-  const form = document.querySelector("#contact-form");
-  const status = document.querySelector("#form-status");
-  form.addEventListener("input", (event) => {
-    event.target.removeAttribute("aria-invalid");
-    status.replaceChildren();
-    status.className = "form-status";
-  });
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const invalidField = [...form.elements].find((field) => field.willValidate && !field.checkValidity());
-    if (invalidField) {
-      invalidField.setAttribute("aria-invalid", "true");
-      invalidField.focus();
-      status.textContent = invalidField.validationMessage || "Please check this field and try again.";
-      status.className = "form-status form-status-error";
-      return;
-    }
-    const values = new FormData(form);
-    const subject = String(values.get("subject")).trim();
-    const body = `Hello Pankaj,\n\n${String(values.get("message")).trim()}\n\n— ${String(values.get("name")).trim()}\n${String(values.get("email")).trim()}`;
-    const draft = document.createElement("a");
-    draft.className = "email-draft-link";
-    draft.href = `mailto:${encodeURIComponent(data.email)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    draft.textContent = "Open your email draft ↗";
-    draft.setAttribute("aria-label", "Open a prepared email draft to Pankaj Dumka");
-    status.textContent = "Your message is ready as a draft. Nothing has been sent from this website. ";
-    status.append(draft);
-    status.className = "form-status form-status-success";
-  });
 })();

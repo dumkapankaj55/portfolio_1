@@ -11,7 +11,7 @@ Highlights:
 - Responsive layouts from desktop through 320px mobile widths.
 - Download links to the supplied resume PDF in the header, hero, and About section, plus a View Resume link.
 - Scroll reveals, active section navigation, reduced-motion support, and a mobile menu.
-- Browser-side contact form validation that prepares an email draft.
+- Medium-sized GitHub, LinkedIn, and LeetCode cards with recognizable icons.
 - Illustrative project previews rendered in the page. They are not screenshots of deployed applications.
 
 ## Files
@@ -44,7 +44,7 @@ Visit <http://localhost:8000>.
 
 Edit `js/config.js` to update personal information, social links, skills, projects, achievements, education, certifications, and copy. Project `github` and `demo` values are intentionally blank because no project URLs were supplied. Add verified URLs there to display those links.
 
-The contact form validates the fields and builds a `mailto:` draft. It does not send or store messages; the visitor must send the draft using their own email application.
+The contact section links directly to GitHub, LinkedIn, LeetCode, and email. There is no contact form or backend.
 
 ## Deploy
 
