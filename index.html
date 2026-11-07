@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101110" />
+    <meta name="description" content="Developer portfolio." />
+    <title>Developer Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/config.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <div class="header-inner">
+          <a class="brand" href="#top" aria-label="Home"><span class="brand-mark">P<span>.</span>D</span><span class="brand-name">Portfolio</span></a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+          <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation"></nav>
+          <a class="button button-small header-resume" href="assets/resume.pdf" download><span>Download CV</span><span class="arrow">↘</span></a>
+        </div>
+      </header>
+      <main id="main">
+        <div id="portfolio-content" aria-live="polite"></div>
+      </main>
+      <footer class="site-footer" id="footer"></footer>
+      <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+    </div>
+    <noscript><div class="noscript-note">This portfolio needs JavaScript enabled to render its content.</div></noscript>
+  </body>
+</html>

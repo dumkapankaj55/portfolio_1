@@ -1,0 +1,1 @@
+No project screenshots were provided. The portfolio renders its clearly labeled interface illustrations directly from HTML/SVG and CSS; add verified screenshots here only if you want to replace them later.
